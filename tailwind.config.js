@@ -16,9 +16,9 @@ module.exports = {
       },
     },
     extend: {
-      fontFamily: {
-        sans: ["var(--font-sora)"],
-      },
+      // fontFamily: {
+      //   sans: ["var(--font-sora)"],
+      // },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
