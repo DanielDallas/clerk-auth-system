@@ -1,26 +1,28 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { ArrowRight } from "lucide-react"
-import { useAuth } from "@clerk/nextjs"
-import Footer from "@/components/footer"
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import { useAuth } from "@clerk/nextjs";
+import Footer from "@/components/footer";
 
 export default function Home() {
-  const { isSignedIn, isLoaded } = useAuth()
+  const { isSignedIn, isLoaded } = useAuth();
 
   return (
     <div className="flex flex-col min-h-screen">
       {/* Navigation */}
       <nav className="w-full py-4 px-4 sm:px-6 md:px-12 flex justify-between items-center">
         <Link href="/" className="flex items-center gap-2">
-          <span className="font-bold text-lg sm:text-xl text-primary">ClerkAuth</span>
+          <span className="font-bold text-lg sm:text-xl text-primary">
+            ClerkAuth
+          </span>
           <span className="text-xs text-gray-500">(v1.19)</span>
         </Link>
         {isLoaded &&
           (isSignedIn ? (
             <Link
               href="/dashboard"
-              className="px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-base rounded-xs bg-primary text-white hover:bg-primary/90 transition-colors"
+              className="px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-base rounded-sm bg-primary text-white hover:bg-primary/90 transition-colors"
             >
               Dashboard
             </Link>
@@ -41,7 +43,8 @@ export default function Home() {
             Secure Authentication for Your Application
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-md">
-            Get started with our powerful and easy-to-use authentication system powered by{" "}
+            Get started with our powerful and easy-to-use authentication system
+            powered by{" "}
             <Link
               href="https://clerk.com"
               className="font-bold hover:underline"
@@ -90,7 +93,9 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold">Secure Authentication</h3>
+                <h3 className="text-lg sm:text-xl font-semibold">
+                  Secure Authentication
+                </h3>
                 <p className="text-gray-500 text-xs sm:text-sm">
                   Protect your application with our robust authentication system
                 </p>
@@ -101,6 +106,5 @@ export default function Home() {
       </div>
       <Footer />
     </div>
-  )
+  );
 }
-
