@@ -42,24 +42,20 @@ You can get these keys from your [Clerk Dashboard](https://dashboard.clerk.com).
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/clerk-authentication-boilerplate.git
-cd clerk-authentication-boilerplate
+git clone https://github.com/DanielDallas/clerk-auth-system.git
+cd clerk-auth-system
 ```
 
 2. Install dependencies:
 
 ```bash
 npm install
-# or
-yarn install
 ```
 
 3. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser.
@@ -67,7 +63,7 @@ yarn dev
 ## 📁 Project Structure
 
 ```
-clerk-authentication-system/
+clerk-auth-system/
 ├── app/                     # Next.js 14 App Router
 │   ├── dashboard/          # Protected dashboard routes
 │   │   ├── layout.tsx     # Dashboard layout with sidebar
@@ -162,6 +158,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-Daniel Dallas - [@thedanieldallas](https://twitter.com/thedanieldallas)
+Daniel Dallas - [LinkedIn] (https://www.linkedin.com/in/danieldallasokoye/)[@thedanieldallas](https://twitter.com/thedanieldallas)
 
 Project Link: [https://github.com/danieldallas/clerk-auth-system](https://github.com/danieldallas/clerk-auth-system)
