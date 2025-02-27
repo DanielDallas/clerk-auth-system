@@ -1,19 +1,19 @@
-import Link from "next/link"
-import { Github, Twitter, Linkedin, FileText } from "lucide-react"
+import Link from "next/link";
+import { Github, Twitter, Linkedin, FileText } from "lucide-react";
 
 export default function Footer() {
   return (
     <footer className="py-6 px-6 md:px-12 border-t">
       <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-        <div className="text-gray-500 text-sm">
-          © {new Date().getFullYear()} ClerkAuth. All rights reserved. Developed by{" "}
+        <div className="text-gray-500 text-xs">
+          © {new Date().getFullYear()} ClerkAuth. All rights reserved. Built by{" "}
           <Link
             href="https://thedanieldallas.com"
             target="_blank"
             rel="noopener noreferrer"
             className="text-primary hover:underline"
           >
-            Daniel Dallas Okoye
+            Daniel Dallas
           </Link>
         </div>
         <div className="flex items-center space-x-4">
@@ -56,6 +56,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
-

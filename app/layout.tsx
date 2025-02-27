@@ -29,13 +29,13 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "ClerkAuth - Authentication Boilerplate",
+    title: "ClerkAuth - Authentication System",
     description: "A secure authentication system using Clerk",
     url: "https://clerkauth.com",
     siteName: "ClerkAuth",
     images: [
       {
-        url: "/og-image.png",
+        url: "public/landing.png",
         width: 1200,
         height: 630,
         alt: "ClerkAuth",
@@ -46,9 +46,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ClerkAuth - Authentication Boilerplate",
+    title: "ClerkAuth - Authentication System",
     description: "A secure authentication system using Clerk",
-    images: ["/og-image.png"],
+    images: ["/pulic/landing.png"],
   },
 };
 
@@ -60,7 +60,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body suppressHydrationWarning className={`${sora.variable} font-sans`}>
+        <body suppressHydrationWarning className={sora.className}>
           <div className="flex flex-col min-h-screen">
             <div className="flex-grow">{children}</div>
             {/* Footer is handled in individual page layouts */}

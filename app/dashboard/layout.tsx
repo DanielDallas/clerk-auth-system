@@ -9,6 +9,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import Footer from "@/components/footer"
 
+
 export default function DashboardLayout({
   children,
 }: {

@@ -9,6 +9,9 @@ export default function Dashboard() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
+export const metadata = {
+  title: "Dashboard",
+};

@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-
 module.exports = {
   darkMode: ["class"],
   content: [
@@ -58,7 +57,7 @@ module.exports = {
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 1px)",
-        sm: "calc(var(--radius) - 1px)",
+        sm: "calc(var(--radius) - 2px)",
       },
     },
   },
