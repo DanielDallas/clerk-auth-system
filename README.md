@@ -158,6 +158,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-Daniel Dallas - [LinkedIn] (https://www.linkedin.com/in/danieldallasokoye/)[@thedanieldallas](https://twitter.com/thedanieldallas)
+Daniel Dallas - [LinkedIn](https://www.linkedin.com/in/danieldallasokoye/) - [@thedanieldallas](https://twitter.com/thedanieldallas)
 
 Project Link: [https://github.com/danieldallas/clerk-auth-system](https://github.com/danieldallas/clerk-auth-system)
