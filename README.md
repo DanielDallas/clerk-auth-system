@@ -1,11 +1,9 @@
 # ClerkAuth - Next.js Authentication Boilerplate
 
-<div align="center">
   <h3>Secure Authentication Made Simple</h3>
   <p>A modern, production-ready authentication boilerplate built with Next.js 14, Clerk, and Tailwind CSS.</p>
-</div>
 
-![ClerkAuth Preview](/public/og-image.png)
+![ClerkAuth Preview](/public/landing.png)
 
 ## Features
 
