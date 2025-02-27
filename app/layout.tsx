@@ -60,6 +60,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
+        {/* <body suppressHydrationWarning className={`${sora.variable} font-sans`}> */}
         <body suppressHydrationWarning className={sora.className}>
           <div className="flex flex-col min-h-screen">
             <div className="flex-grow">{children}</div>
