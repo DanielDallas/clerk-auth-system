@@ -1,101 +1,106 @@
-import Image from "next/image";
+"use client"
+
+import Link from "next/link"
+import { ArrowRight } from "lucide-react"
+import { useAuth } from "@clerk/nextjs"
+import Footer from "@/components/footer"
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const { isSignedIn, isLoaded } = useAuth()
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <div className="flex flex-col min-h-screen">
+      {/* Navigation */}
+      <nav className="w-full py-4 px-4 sm:px-6 md:px-12 flex justify-between items-center">
+        <Link href="/" className="flex items-center gap-2">
+          <span className="font-bold text-lg sm:text-xl text-primary">ClerkAuth</span>
+          <span className="text-xs text-gray-500">(v1.19)</span>
+        </Link>
+        {isLoaded &&
+          (isSignedIn ? (
+            <Link
+              href="/dashboard"
+              className="px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-base rounded-xs bg-primary text-white hover:bg-primary/90 transition-colors"
+            >
+              Dashboard
+            </Link>
+          ) : (
+            <Link
+              href="/sign-in"
+              className="px-3 py-1.5 sm:px-4 sm:py-2 text-sm sm:text-base rounded-xs hover:bg-gray-100 transition-colors"
+            >
+              Sign In
+            </Link>
+          ))}
+      </nav>
+
+      {/* Hero Section */}
+      <div className="flex-1 flex flex-col md:flex-row items-center justify-center px-4 sm:px-6 md:px-12 py-8 md:py-12">
+        <div className="w-full md:w-1/2 space-y-4 sm:space-y-6 md:pr-12 mb-8 md:mb-0">
+          <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-6xl font-bold tracking-tight">
+            Secure Authentication for Your Application
+          </h1>
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-md">
+            Get started with our powerful and easy-to-use authentication system powered by{" "}
+            <Link
+              href="https://clerk.com"
+              className="font-bold hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Clerk
+            </Link>
+            .
+          </p>
+          {!isSignedIn && (
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4">
+              <Link
+                href="/sign-up"
+                className="flex items-center justify-center gap-2 px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
+              >
+                Create Account
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                href="/sign-in"
+                className="flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+              >
+                Sign In
+              </Link>
+            </div>
+          )}
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <div className="w-full md:w-1/2 flex justify-center">
+          <div className="w-full max-w-md h-[300px] sm:h-[400px] md:h-[500px] bg-gradient-to-br from-primary/10 to-primary/30 rounded-md flex items-center justify-center">
+            <div className="w-3/4 h-3/4 bg-white rounded-md shadow-xl flex items-center justify-center p-4 sm:p-6">
+              <div className="text-center space-y-3 sm:space-y-4">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto bg-primary/20 rounded-full flex items-center justify-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6 sm:h-8 sm:w-8 text-primary"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-lg sm:text-xl font-semibold">Secure Authentication</h3>
+                <p className="text-gray-500 text-xs sm:text-sm">
+                  Protect your application with our robust authentication system
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <Footer />
     </div>
-  );
+  )
 }
+
